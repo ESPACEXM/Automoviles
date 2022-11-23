@@ -10,7 +10,7 @@ $usrClass = new usuariosModel();
 
 $result = array();
 $resultRoles = array();
-$result = $usrClass->getUsuarios();
+$result = $usrClass->getRoles();
 
 ?>
 <script src="assets/js/moduloUsuarios.js"></script>
@@ -31,8 +31,9 @@ $result = $usrClass->getUsuarios();
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">NOMBRE</th>
-                            <th scope="col">USERNAME</th>
-                            <th scope="col">EDITAR</th>
+                            <th scope="col">ESTADO</th>
+                            <th scope="col">ELIMINAR ROLES</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -42,14 +43,19 @@ $result = $usrClass->getUsuarios();
                     ?>
                         <tr>
                             <th><?php echo $fila['id']; ?></th>
-                            <td><?php echo $fila['nombres']." ".$fila['apellidos']; ?></td>
-                            <td><?php echo $fila['usuario']; ?></td>
+                            <td><?php echo $fila['nombre']; ?></td>
+                            <td><?php echo $fila['estado']; ?></td>
                             <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
-                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Editar</button>
+                                
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn cancel" id="btnEliminarUsuario"
+                                        onclick="eliminarUsuario(<?php echo $fila['id']; ?>);" name="btnEliminarUsuario"
+                                        type="button">Eliminar</button>
                                 </div>
+                                
                             </td>
+                           
+                            
                     
                         </tr>
 
@@ -62,4 +68,3 @@ $result = $usrClass->getUsuarios();
             </div>
         </div>
     </div>
-    

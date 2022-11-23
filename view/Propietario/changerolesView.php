@@ -32,7 +32,7 @@ $result = $usrClass->getUsuarios();
                             <th scope="col">ID</th>
                             <th scope="col">NOMBRE</th>
                             <th scope="col">USERNAME</th>
-                            <th scope="col">EDITAR</th>
+                            <th scope="col">EDITAR ROL</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +47,7 @@ $result = $usrClass->getUsuarios();
                             <td>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
-                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Editar</button>
+                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Cambiar rol</button>
                                 </div>
                             </td>
                     

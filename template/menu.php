@@ -34,7 +34,9 @@
                         Roles
                     </a> 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item " href="view/Propietario/modrolesView.php">Modificar Roles</a></li> 
+                        <li><a class="dropdown-item " href="view/Propietario/modrolesView.php">Editar Roles</a></li> 
+                        <li><a class="dropdown-item " href="view/Propietario/deleterolesView.php">Eliminar Roles</a></li>
+                        <li><a class="dropdown-item " href="view/Propietario/changerolesView.php">Cambiar roles de Usuarios</a></li> 
                         
                     </ul>
                  </li>

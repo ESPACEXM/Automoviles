@@ -65,6 +65,20 @@ class usuariosModel {
         return $resultado;
     }
 
+    function getRoles(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT id, nombre, estado
+        FROM sistema.roles;
+        
+        ";
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+
     /**
      * Funcion para obtener el listado de usuarios
      */

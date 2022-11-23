@@ -21,7 +21,7 @@
   <h2>Registro</h2>
 
   
-  <form class="form" method="POST" action="controller/Registro/controller_registro.php">
+  <form class="form" method="POST" action="../../../controller/Registro/controller_registro.php">
   
     <div class="user-box" >
       <input id="inNombre" type="name" name="inNombre" required="">
@@ -39,14 +39,15 @@
       <input id="inPassword" type="password" name="inPassword" required="">
       <label>Password</label>
     </div>
-    <div class="user-box">
-    <select  class="select" name="inRol">
+    <div class="select">
+    <select   class="select" name="inRol">
     <option value="">Seleccione su Rol</option>
-    <option value="Administrador">Propietario</option>
-    <option value="Administrador">Vendedor</option>
+    <option value="1">Propietario</option>
+    <option value="2">Vendedor</option>
    </select>
     </div>
-    <button disabled>
+    <br>
+    <button>
     <span>Crear</span>
     <div class="top"></div>
     <div class="left"></div>

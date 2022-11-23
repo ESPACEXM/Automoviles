@@ -15,13 +15,10 @@ $rol=$_POST["inRol"];
 
 
 
-
-
-
 $conexion = mysqli_connect(SERVER, USERDB, PASSDB, DATABASE);
    
 $sql_into = "INSERT INTO sistema.users
-(usuario, password, nombres, apellidos, estado,rol)
+(usuario, password, nombres, apellidos, estado, roles_id)
 VALUES('$usuario', '$password', '$nombre', '$apellido', 'activo','$rol');";
     
     if(mysqli_query($conexion,$sql_into)){

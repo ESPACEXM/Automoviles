@@ -26,27 +26,27 @@ $result = $usrClass->getUsuarios();
             </section>
             
         </section>
-
-        <form action="" class="form_contact">
+        
+        <form method="POST" action="../../controller/Datos_Registro/addvehiculosController.php" class="form_contact">
             <h2>Ingresar datos</h2>
             <div class="user_info">
-                <label for="names">Puertas</label>
-                <input type="text" id="names" required="">
+                <label for="text">Puertas</label>
+                <input name="puertas" type="text" id="puertas" required="">
 
-                <label for="names">Color</label>
-                <input type="text" id="phone">
+                <label for="text">Color</label>
+                <input name="colo" type="text" id="color">
 
                 <label for="text">Año</label>
-                <input type="text" id="email">
+                <input name="año" type="text" id="año">
 
-                <label for="mensaje">Numero de Vin</label>
-                <textarea id="mensaje"></textarea>
+                <label for="numero">Numero de Vin</label>
+                <input name="vin" id="vin"></input>
 
-                <label for="mensaje">Numero de Chasis</label>
-                <textarea id="mensaje"></textarea>
+                <label for="numero">Numero de Chasis</label>
+                <input name="chasis" id="chasis"></input>
 
-                <label for="mensaje">Numero de Placa</label>
-                <textarea id="mensaje"></textarea>
+                <label for="numero">Numero de Placa</label>
+                <input name="placas" id="placas"></input>
 
                 <button class="button-guardar">Guardar</button>
             </div>
