@@ -3,7 +3,7 @@
 class Tools{
 
     function conectar(){
-        $conexion = mysqli_connect(SERVER, USERDB, PASSDB, DATABASE);
+        $conexion = mysqli_connect(SERVER, USERDB, PASSDB, DATABASE) or die(mysqli_error());
 
         if($conexion){
             mysqli_query($conexion, "SET NAMES 'utf8'");

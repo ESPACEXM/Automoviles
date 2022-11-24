@@ -9,15 +9,13 @@ $usrClass = new usuariosModel();
 $result = 0;
 $respuesta = array();
 
-$obtenerUsuario = (isset($_POST['obtener_usuario'])) ? $_POST['obtener_usuario'] : "0";
-$crearUsuario = (isset($_POST['crear_usuario'])) ? $_POST['crear_usuario'] : "0";
-$actualizarUsuario = (isset($_POST['actualizar_usuario'])) ? $_POST['actualizar_usuario'] : "0";
-$eliminarUsuario = (isset($_POST['eliminar_usuario'])) ? $_POST['eliminar_usuario'] : "0";
-$eliminarRol = (isset($_POST['eliminar_rol'])) ? $_POST['eliminar_rol'] : "0";
+$obtenerCliente = (isset($_POST['obtener_cliente'])) ? $_POST['obtener_cliente'] : "0";
+$eliminarCliente = (isset($_POST['eliminar_cliente'])) ? $_POST['eliminar_cliente'] : "0";
 
 
-if($obtenerUsuario == 1){
-    $user_id = (isset($_POST['user_id'])) ? $_POST['user_id'] : "0";
+
+if($obtenerCliente == 1){
+    $user_id = (isset($_POST['id'])) ? $_POST['id'] : "0";
         
     $result = $usrClass->getUsuarioById($user_id);
 

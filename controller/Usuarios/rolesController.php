@@ -9,10 +9,7 @@ $usrClass = new usuariosModel();
 $result = 0;
 $respuesta = array();
 
-$obtenerUsuario = (isset($_POST['obtener_usuario'])) ? $_POST['obtener_usuario'] : "0";
-$crearUsuario = (isset($_POST['crear_usuario'])) ? $_POST['crear_usuario'] : "0";
-$actualizarUsuario = (isset($_POST['actualizar_usuario'])) ? $_POST['actualizar_usuario'] : "0";
-$eliminarUsuario = (isset($_POST['eliminar_usuario'])) ? $_POST['eliminar_usuario'] : "0";
+$obtenerRol = (isset($_POST['obtener_rol'])) ? $_POST['obtener_rol'] : "0";
 $eliminarRol = (isset($_POST['eliminar_rol'])) ? $_POST['eliminar_rol'] : "0";
 
 

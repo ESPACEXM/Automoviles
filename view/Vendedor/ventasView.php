@@ -10,7 +10,8 @@ $usrClass = new usuariosModel();
 
 $result = array();
 $resultRoles = array();
-$result = $usrClass->getUsuarios();
+$result = $usrClass->getCliente();
+$result2 = $usrClass->getVehiculos();
 
 ?>
 <script src="assets/js/moduloUsuarios.js"></script>
@@ -30,19 +31,54 @@ $result = $usrClass->getUsuarios();
         <form action="" class="form_contact">
             <h2>Ingresar datos</h2>
             <div class="user_info">
-                <label for="names">Cliente</label>
-                <input type="text" id="names" required="">
+            <label for="text">Cliente</label>
+                <label> <select name="" class="form-control">
+               <?php
+                while ($fila = mysqli_fetch_array($result)){
+    ?>
+        <option value="<?php echo $fila['nombre'] ?>"><?php echo $fila['nombre']?></option>
 
-                <label for="names">Vendedor</label>
-                <input type="text" id="phone">
+    <?php 
+    }
+    ?>
+                </select></label>
+<br>
+<br>
+                <label for="text">Vendedor</label>
+                <input name="vendedor" type="text" id="vendedor">
 
+     <br>
                 <label for="text">Vehiculo</label>
-                <input type="text" id="email">
+                <label> <select name="" class="form-control">
+               <?php
+                while ($fila = mysqli_fetch_array($result2)){
+    ?>
+        <option value="<?php echo $fila['numero_chasis'] ?>"><?php echo $fila['numero_chasis']?></option>
 
-                <label for="mensaje">Observación</label>
-                <textarea id="mensaje"></textarea>
+    <?php 
+    }
+    ?>
+   
+                </select></label>
+                <br><br>
+                <br><br>
 
-                <button class="button-guardar">Guardar</button>
+                <label for="text">Forma de Pago</label>
+              <label> <select name="pago" class="form-control">
+              <option>Seleccione Forma de Pago</option>
+              <option  value="Efectivo">Efectivo</option>
+              <option  value="Cuotas">Cuotas</option>
+
+
+                </select></label>
+
+
+
+                <br><br> <br><br>
+
+               
+
+                <button class="button-guardar">Siguiente</button>
             </div>
         </form>
 

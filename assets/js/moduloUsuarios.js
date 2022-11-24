@@ -128,12 +128,51 @@ function eliminarUsuario(id){
     $.ajax({
         type: 'POST',
         data: "eliminar_usuario=1&user_id=" + id,
-        url: 'controller/Usuarios/usuarioController.php',
+        url: '../../controller/Usuarios/usuarioController.php',
         dataType: 'json',
         success: function (data) {
             var resultado = data.resultado;
             if (resultado === 1) {                
                 alert('Usuario Eliminado exitosamente');
+                cargarContenido('view/Usuarios/usuariosView.php');
+            } else {
+                alert('No se pudo eliminar el usuario seleccionado');
+            }
+        }
+    });
+    
+
+}
+function eliminarRol(id){
+
+    $.ajax({
+        type: 'POST',
+        data: "eliminar_usuario=1&rol_id=" + id,
+        url: '../../controller/Usuarios/rolesController.php',
+        dataType: 'json',
+        success: function (data) {
+            var resultado = data.resultado;
+            if (resultado === 1) {                
+                alert('Rol Eliminado exitosamente');
+                cargarContenido('view/Usuarios/usuariosView.php');
+            } else {
+                alert('No se pudo eliminar el usuario seleccionado');
+            }
+        }
+    });
+
+}
+function eliminarCliente(id){
+
+    $.ajax({
+        type: 'POST',
+        data: "eliminar_usuario=1&rol_id=" + id,
+        url: '../../controller/Usuarios/ClientesController.php',
+        dataType: 'json',
+        success: function (data) {
+            var resultado = data.resultado;
+            if (resultado === 1) {                
+                alert('Rol Eliminado exitosamente');
                 cargarContenido('view/Usuarios/usuariosView.php');
             } else {
                 alert('No se pudo eliminar el usuario seleccionado');

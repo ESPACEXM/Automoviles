@@ -11,7 +11,7 @@ include_once("../../model/functions.php");
 $usrClass = new usuariosModel();
 $result = array();
 $resultRoles = array();
-$result = $usrClass->getUsuarios();
+$result = $usrClass->getRoles();
 ?>
 
 
@@ -59,11 +59,11 @@ $result = $usrClass->getUsuarios();
 
                    
                         <thead>    
-                        <tr>
-                        <th>Id</th>
+                        <tr >
+                        <th >Id</th>
                         <th>Nombre</th>
-                        <th>Estado</th>
-                        </tr>
+                        <th >Estado</th>
+                       
                         </thead>
                         <tbody>
 
@@ -72,17 +72,12 @@ $result = $usrClass->getUsuarios();
 
 while ($fila = mysqli_fetch_array($result)){
     ?>
-        <tr>
+        <tr class="bg-primary">
             <th><?php echo $fila['id']; ?></th>
-            <td><?php echo $fila['nombres']." ".$fila['apellidos']; ?></td>
-            <td><?php echo $fila['usuario']; ?></td>
+            <td><?php echo $fila['nombre']." ".$fila['apellidos']; ?></td>
+            <td><?php echo $fila['estado']; ?></td>
             <td><?php echo $fila['rol_id']; ?></td>
-            <td>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
-                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Cambiar rol</button>
-                </div>
-            </td>
+            
     
         </tr>
 

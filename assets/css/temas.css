@@ -7,92 +7,7 @@ body{
    
 }
 
-.table-responsive{
-    border: 1px;
-   display: inline-block;
- 
-}
-.modal{
-    
-    border: 20px;
-    display: inline-block;
-    width: auto;
-    margin: auto;
-    position: absolute;
-    padding: 80px;
-    text-align: left;
-    background: #009879;
 
-}
-
-
-
-.table { 
-     border-collapse: collapse;
-     margin: 210px 0;
-     font-size: 1em; 
-     font-family: sans-serif;
-      
-      min-width: 450px; 
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
-
-
-      .table-rol { 
-        border-collapse: collapse;
-        margin: 210px 0;
-        font-size: 1em; 
-        font-family: sans-serif;
-         
-         min-width: 450px; 
-         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
-
-      .table-3 { 
-        border-collapse: collapse;
-        margin: 210px 10px;
-        font-size: 1em; 
-        font-family: sans-serif;
-         
-         min-width: 450px; 
-         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
-
-         .table-2 { 
-          border-collapse: collapse;
-          margin: 210px 10px;
-          font-size: 1em; 
-          font-family: sans-serif;
-           
-           min-width: 450px; 
-           box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); }
-
-.table thead tr { 
-    background-color: #e37910; 
-    color: #ffffff; 
-    text-align: middle; }
-    .table-3 thead tr { 
-      background-color: #e37910; 
-      color: #ffffff; 
-      text-align: middle; }
-
-.table-2 thead tr { 
-      background-color: #e37910; 
-      color: #ffffff; 
-      text-align: middle; }
-
-.table th, .table td { 
-    padding: 10px 160px; }
-    .table-3 th, .table td { 
-      padding: 10px 120px; }
-    .table-2 th, .table td { 
-      padding: 10px 104px; }
-
-.table tbody tr { 
-    border-bottom: 1px solid #dddddd; } .table tbody tr:nth-of-type(even) { 
-        background-color: #f3f3f3; } .table tbody tr:last-of-type { 
-            border-bottom: 5px solid #984c00; }
-.table-2 tbody tr { 
-              border-bottom: 1px solid #dddddd; } .table tbody tr:nth-of-type(even) { 
-                  background-color: #f3f3f3; } .table tbody tr:last-of-type { 
-                      border-bottom: 5px solid #984c00; }
 
                      
 .form-control {
@@ -404,7 +319,7 @@ body{
 
 .webdesigntuts-workshop {
 	background: #151515;
-	height: 28%;
+	height: 27%;
 	position: absolute;
 	text-align: center;
 	width: 100%;
@@ -414,7 +329,7 @@ body{
 .webdesigntuts-workshop:after {
 	content: '';
 	display: block;	
-	height: 1px;
+	height: 0.5px;
 	left: 50%;
 	margin: 0 0 0 -400px;
 	position: absolute;

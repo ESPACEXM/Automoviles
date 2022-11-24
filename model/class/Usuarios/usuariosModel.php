@@ -5,6 +5,18 @@ class usuariosModel {
     /**
      * Funcion para obtener el listado de usuarios
      */
+
+    function getCliente(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT * FROM cliente";
+                ;
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
     function getUsuarios(){
         $conexionClass = new Tools();
         $conexion = $conexionClass->conectar();
@@ -15,7 +27,25 @@ class usuariosModel {
                         usuario,
                         password,                                                
                         estado 
+                        roles_id
                 FROM users 
+                "
+                ;
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+    function getClientes(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT id,
+                        nombre,
+                        nit,                                                                   
+                        estado 
+                        
+                FROM cliente
                 "
                 ;
  
