@@ -36,7 +36,7 @@ $result = $usrClass->getClientes();
       <div class="container-fluid">
     <form>
       <input class="form-control me-2 light-table-filter" style="width: 500px; text-align:center;" data-table="table_id" type="text" 
-      placeholder="Buscar Usuarios">
+      placeholder="Buscar Clientes">
       <hr>
       </form>
       </section>
@@ -80,8 +80,8 @@ while ($fila = mysqli_fetch_array($result)){
             <td><?php echo $fila['estado']; ?></td>
             <td>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-danger me-md-2" id="btnEliminarUsuario"
-                                        onclick="eliminarUsuario(<?php echo $fila['id']; ?>);" name="btnEliminarUsuario"
+                                    <button class="cancel" id="btnEliminarUsuario"
+                                        onclick="eliminarCliente(<?php echo $fila['id']; ?>)" name="btnEliminarUsuario"
                                         type="button">Eliminar</button>
                                 </div>
             </td>
@@ -97,8 +97,7 @@ while ($fila = mysqli_fetch_array($result)){
   </table>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-<script src="../js/user.js"></script>
-<script src="../js/acciones.js"></script>
+
 <script src="../../assets/js/buscador.js"></script>
 <script src="../../assets/js/moduloUsuarios.js"></script>
 		<?php include('../index.php'); ?>

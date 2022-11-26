@@ -13,8 +13,8 @@ $obtenerRol = (isset($_POST['obtener_rol'])) ? $_POST['obtener_rol'] : "0";
 $eliminarRol = (isset($_POST['eliminar_rol'])) ? $_POST['eliminar_rol'] : "0";
 
 
-if($obtenerUsuario == 1){
-    $user_id = (isset($_POST['user_id'])) ? $_POST['user_id'] : "0";
+if($obtenerRol == 1){
+    $id = (isset($_POST['id'])) ? $_POST['id'] : "0";
         
     $result = $usrClass->getUsuarioById($user_id);
 

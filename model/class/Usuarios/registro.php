@@ -54,7 +54,7 @@
     <div class="bottom"></div>
     <div class="right"></div>
 </button>
-<p class="message">Ya estás registrado? <a href="index.php">Iniciar sesión</a></p>
+<p class="message">Ya estás registrado? <a href="../../../index.php">Iniciar sesión</a></p>
   </form>
 </div>
 </body>

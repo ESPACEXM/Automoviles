@@ -16,7 +16,7 @@ $sql_into = "INSERT INTO sistema.cliente
 VALUES('$nombre', '$NIT', '$estado');";
     
     if(mysqli_query($conexion,$sql_into)){
-        header("location: ../../main.php");
+        header("location: ../../vendedor.php");
     
     }else{
         echo "Error:".$sql_into."<br>".mysqli_error($conexion);

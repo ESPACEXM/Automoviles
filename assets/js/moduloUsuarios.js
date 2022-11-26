@@ -123,6 +123,32 @@ function obtenerUsuario(id){
     });
 }
 
+function obtenerCliente(id){
+
+    $.ajax({
+        type: 'POST',
+        data: "obtener_cliente=1&user_id=" + id,
+        url: 'controller/Usuarios/usuarioController.php',
+        dataType: 'json',
+        success: function (data) {
+            var id = data.id;
+            var nombres = data.nombres;
+            var apellidos = data.apellidos;
+            var usuario = data.usuario;
+            var clave = data.password;
+        
+            
+            $('#id_upd').val(id);
+            $('#nombres_upd').val(nombres);
+            $('#apellidos_upd').val(apellidos);
+            $('#usuario_upd').val(usuario);
+            $('#password_upd').val(clave);
+
+            $('#formActualizaUsuario').modal('show');                            
+        }
+    });
+}
+
 function eliminarUsuario(id){
 
     $.ajax({
@@ -163,6 +189,26 @@ function eliminarRol(id){
 
 }
 function eliminarCliente(id){
+
+    $.ajax({
+        type: 'POST',
+        data: "eliminar_usuario=1&user_id=" + id,
+        url: '../../controller/Clientes/clientesController.php',
+        dataType: 'json',
+        success: function (data) {
+            var resultado = data.resultado;
+            if (resultado === 1) {                
+                alert('Cliente Eliminado exitosamente');
+                cargarContenido('../view/Propietario/deleteclienteView.php');
+            } else {
+                alert('No se pudo eliminar el usuario seleccionado');
+            }
+        }
+    });
+
+}
+
+function cambiarRol(id){
 
     $.ajax({
         type: 'POST',

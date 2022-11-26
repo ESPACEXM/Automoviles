@@ -36,7 +36,7 @@ $result = $usrClass->getVehiculos();
       <div class="container-fluid">
     <form>
       <input class="form-control me-2 light-table-filter" style="width: 500px; text-align:center;" data-table="table_id" type="text" 
-      placeholder="Buscar Usuarios">
+      placeholder="Buscar Vehiculo">
       <hr>
       </form>
       </section>

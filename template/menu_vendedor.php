@@ -32,8 +32,9 @@
                         Ventas
                     </a> 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item " href="view/Vendedor/ventasView.php">Nueva Venta</a></li>    
-                        <li><a class="dropdown-item " href="view/Vendedor/ventasGestionView.php">Gestionar Venta</a></li>                                                
+                        <li><a class="dropdown-item " href="view/Vendedor/newventasView.php">Nueva Venta</a></li>    
+                        <li><a class="dropdown-item " href="view/Vendedor/ventasGestionView.php">Gestionar Ventas</a></li> 
+                                                                      
                     </ul>
                     
                  </li>

@@ -17,6 +17,20 @@ class usuariosModel {
         $conexionClass->desconectar($conexion);
         return $resultado;
     }
+
+    function getVenta(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT * FROM venta_vehiculo";
+                ;
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+
+
     function getUsuarios(){
         $conexionClass = new Tools();
         $conexion = $conexionClass->conectar();
@@ -109,6 +123,20 @@ class usuariosModel {
         return $resultado;
     }
 
+    function getPago(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT monto
+        FROM sistema.pago;
+        
+        ";
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+
     /**
      * Funcion para obtener el listado de usuarios
      */
@@ -123,6 +151,21 @@ class usuariosModel {
                         password,                                                
                         estado 
                 FROM users where id = $user_id";
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+
+    function getClienteById($clientes_id){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT id,
+                        nombre,
+                        nit,                                                                       
+                        estado 
+                FROM cliente where id = $cliente_id";
  
         $resultado = mysqli_query($conexion, $sql);
         $conexionClass->desconectar($conexion);
@@ -207,4 +250,20 @@ class usuariosModel {
         }
     }
 }
+
+function eliminarCliente($cliente_id){
+    $conexionClass = new Tools();
+    $conexion = $conexionClass->conectar();
+    $sql = "DELETE FROM cliente WHERE id = $cliente_id";
+    
+    $resultado = mysqli_query($conexion, $sql);
+    if($resultado){
+        $conexionClass->desconectar($conexion);
+        return 1;
+    }else{
+        $conexionClass->desconectar($conexion);
+        return 0;
+    }
+}
+
 ?>

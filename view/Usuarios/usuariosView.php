@@ -1,170 +1,104 @@
 <?php
+
 session_start();
-if (!$_SESSION['user_id']) {
+
+if (!$_SESSION['user_id']){
+
     header("location: ../../index.php");
 }
-
 include_once("../../model/functions.php");
 
 $usrClass = new usuariosModel();
-
 $result = array();
 $resultRoles = array();
 $result = $usrClass->getUsuarios();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<link rel="stylesheet" href="../../assets/css/temas.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <title>Cambiar Roles</title>
+</head>
+
+
+<section class="webdesigntuts-workshop">
+      </form>
+      <div class="container-fluid">
+    <form>
+      <input class="form-control me-2 light-table-filter" style="width: 500px; text-align:center;" data-table="table_id" type="text" 
+      placeholder="Buscar Clientes">
+      <hr>
+      </form>
+      </section>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+
+
+ 
+      <table class="table table-striped table-dark table_id " >
+
+                   
+                        <thead>    
+                        <tr>
+                        <th>Id</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Usuario</th>
+                        <th>Password</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+				<?php
+
+
+while ($fila = mysqli_fetch_array($result)){
+    ?>
+        <tr>
+            <th><?php echo $fila['id']; ?></th>
+            <td><?php echo $fila['nombres']; ?></td>
+            <td><?php echo $fila['apellidos']; ?></td>
+            <td><?php echo $fila['usuario']; ?></td>
+            <td><?php echo $fila['password']; ?></td>
+            <td>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="cancel" id="btnEliminarCliente"
+                        name="btnEliminarCliente" type="button" onclick="eliminarUsuario(<?php echo $fila['id']; ?>); ">Eliminar</button>
+                </div>
+            </td>
+    
+        </tr>
+
+    <?php 
+    }
 
 ?>
-<script src="assets/js/moduloUsuarios.js"></script>
-<div class="card">
-    <div class="card-header">
-        <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">LISTADO DE USUARIOS</h1>
-        </div>
-    </div>
 
-    <div class="card-body">
+	</body>
+  </table>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script src="../../assets/js/buscador.js"></script>
+<script src="../../assets/js/moduloUsuarios.js"></script>
 
-
-        <div class="container">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-success me-md-2" id="btnNuevoUsuario" name="btnNuevoUsuario" type="button"
-                    data-bs-toggle="modal" data-bs-target="#formNuevoUsuario">Nuevo Usuario</button>
-            </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">NOMBRE</th>
-                            <th scope="col">USERNAME</th>
-                            <th scope="col">CLAVE</th>
-                            <th scope="col">ESTADO</th>
-                            <th scope="col">EDITAR</th>
-                            <th scope="col">ELIMINAR</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <?php 
-                while ($fila = mysqli_fetch_array($result)){
-                    ?>
-                        <tr>
-                            <th><?php echo $fila['id']; ?></th>
-                            <td><?php echo $fila['nombres']." ".$fila['apellidos']; ?></td>
-                            <td><?php echo $fila['usuario']; ?></td>
-                            <td><?php echo $fila['password']; ?></td>
-                            <td><?php echo $fila['estado']; ?></td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-warning me-md-2" id="btnEditarUsuario"
-                                        name="btnEditarUsuario" type="button" onclick="obtenerUsuario(<?php echo $fila['id']; ?>);">Editar</button>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-danger me-md-2" id="btnEliminarUsuario"
-                                        onclick="eliminarUsuario(<?php echo $fila['id']; ?>);" name="btnEliminarUsuario"
-                                        type="button">Eliminar</button>
-                                </div>
-                            </td>
-                        </tr>
-
-                    <?php 
-                    }
-                    ?>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR USUARIOS -->
-    <div class="modal fade" id="formNuevoUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="formNuevoUsuario">Nuevo Usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nombres" placeholder="aqui va tu nombre">
-                        <label for="nombres">Nombres</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="apellidos" placeholder="aqui va tu apellido">
-                        <label for="apellidos">Apellidos</label>
-                    </div>
-
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="usuario" placeholder="username">
-                        <label for="usuario">Username</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="aqui va tu clave">
-                        <label for="password">Clave</label>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnAgregarUsuario">Agregar Usuario</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- AQUI INICIA ESTA EL FORMULARIO MODAL PARA AGREGAR USUARIOS -->
-    <div class="modal fade" id="formActualizaUsuario" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="formActualizaUsuario">Usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="id_upd">
-                        <label for="id_upd">ID</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nombres_upd" placeholder="aqui va tu nombre">
-                        <label for="nombres_upd">Nombres</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="apellidos_upd" placeholder="aqui va tu apellido">
-                        <label for="apellidos_upd">Apellidos</label>
-                    </div>
-
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="usuario_upd" placeholder="username">
-                        <label for="usuario_upd">Username</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="password_upd" placeholder="aqui va tu clave">
-                        <label for="password_upd">Clave</label>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnActualizarUsuario">Actualizar Usuario</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+		<?php include('../index.php'); ?>
+</html>

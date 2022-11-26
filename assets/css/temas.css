@@ -453,3 +453,10 @@ body{
 		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
     }
 }
+
+.boton{
+  background-color: #23c483;
+  margin: 25px;
+  text-decoration: none;
+  font-weight: 700;
+}

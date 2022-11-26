@@ -36,7 +36,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item " href="view/Propietario/rolesView.php">Ver Roles</a></li> 
                         <li><a class="dropdown-item " href="view/Propietario/addrolesView.php">Agregar Roles</a></li> 
-                        <li><a class="dropdown-item " href="view/Propietario/changerolesView.php">Cambiar roles de Usuarios</a></li> 
+                        
                         
                     </ul>
                  </li>
@@ -51,6 +51,16 @@
                         <li><a class="dropdown-item " href="view/Propietario/deleteclienteView.php">Eliminar Cliente</a></li>    
                     </li>                                       
                     </ul>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle menu_opcion" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuarios
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item " href="view/Usuarios/usuariosView.php">Ver Usuarios</a></li> 
+                        
+                    </ul>
+                    <li class="nav-item dropdown">
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle menu_opcion" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">

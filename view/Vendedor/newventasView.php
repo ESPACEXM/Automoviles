@@ -14,7 +14,7 @@ $result = $usrClass->getCliente();
 $result2 = $usrClass->getVehiculos();
 
 ?>
-<script src="assets/js/moduloUsuarios.js"></script>
+<script src="../../assets/js/moduloUsuarios.js"></script>
 <link rel="stylesheet" href="../../assets/css/temas.css">
 <body>
 
@@ -28,11 +28,11 @@ $result2 = $usrClass->getVehiculos();
             
         </section>
 
-        <form action="" class="form_contact">
+        <form method="POST" action="../../controller/Datos_Registro/addventasController.php" class="form_contact">
             <h2>Ingresar datos</h2>
             <div class="user_info">
             <label for="text">Cliente</label>
-                <label> <select name="" class="form-control">
+                <label> <select name="cliente" class="form-control">
                <?php
                 while ($fila = mysqli_fetch_array($result)){
     ?>
@@ -44,12 +44,13 @@ $result2 = $usrClass->getVehiculos();
                 </select></label>
 <br>
 <br>
-                <label for="text">Vendedor</label>
-                <input name="vendedor" type="text" id="vendedor">
+                <h2 for="text">Vendedor</h2>
+                <?php echo $_SESSION['user_nombre']; ?>
 
      <br>
+     <br>
                 <label for="text">Vehiculo</label>
-                <label> <select name="" class="form-control">
+                <label> <select name="vehiculo" id="vehiculo" class="form-control">
                <?php
                 while ($fila = mysqli_fetch_array($result2)){
     ?>
@@ -63,22 +64,21 @@ $result2 = $usrClass->getVehiculos();
                 <br><br>
                 <br><br>
 
-                <label for="text">Forma de Pago</label>
-              <label> <select name="pago" class="form-control">
-              <option>Seleccione Forma de Pago</option>
-              <option  value="Efectivo">Efectivo</option>
-              <option  value="Cuotas">Cuotas</option>
-
-
-                </select></label>
-
+               <label for="text">Observaciones</label>
+               <input name="observaciones" type="text" id="observaciones">
+             
+               
 
 
                 <br><br> <br><br>
 
+                
+             <button name="btn-siguiente" class="button-guardar">Siguiente</button>
+            
                
-
-                <button class="button-guardar">Siguiente</button>
+                  
+               
+                
             </div>
         </form>
 
