@@ -46,8 +46,7 @@
                         Clientes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item " href="view/Propietario/addclienteView.php">Agregar Cliente</a></li> 
-                        <li><a class="dropdown-item " href="view/Propietario/modclienteView.php">Modificar Cliente</a></li>    
+                        <li><a class="dropdown-item " href="view/Propietario/addclienteView.php">Agregar Cliente</a></li>    
                         <li><a class="dropdown-item " href="view/Propietario/deleteclienteView.php">Eliminar Cliente</a></li>    
                     </li>                                       
                     </ul>
@@ -58,6 +57,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item " href="view/Usuarios/usuariosView.php">Ver Usuarios</a></li> 
+                        <li><a class="dropdown-item " href="view/Usuarios/deleteusuariosView.php">Eliminar Usuarios</a></li>
                         
                     </ul>
                     <li class="nav-item dropdown">

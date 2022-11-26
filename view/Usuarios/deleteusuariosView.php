@@ -10,10 +10,7 @@ include_once("../../model/functions.php");
 
 $usrClass = new usuariosModel();
 $result = array();
-$result2 = array();
-$result = $usrClass->getVehiculos();
-$result2 = $usrClass->getModelo();
-$result3 = $usrClass->getMarcas();
+$result = $usrClass->getUsuarios();
 
 
 ?>
@@ -27,7 +24,6 @@ $result3 = $usrClass->getMarcas();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/fontawesome-all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -40,7 +36,7 @@ $result3 = $usrClass->getMarcas();
       <div class="container-fluid">
     <form>
       <input class="form-control me-2 light-table-filter" style="width: 500px; text-align:center;" data-table="table_id" type="text" 
-      placeholder="Buscar Vehiculo">
+      placeholder="Buscar Usuarios">
       <hr>
       </form>
       </section>
@@ -65,11 +61,10 @@ $result3 = $usrClass->getMarcas();
                         <thead>    
                         <tr>
                         <th>Id</th>
-                        <th>Puertas</th>
-                        <th>Color</th>
-                        <th>Año</th>
-                        <th>Modelo</th>
-                        <th>Marca</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Usuario</th>
+                        <th>Password</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -78,33 +73,34 @@ $result3 = $usrClass->getMarcas();
 
 
 while ($fila = mysqli_fetch_array($result)){
-   
     ?>
         <tr>
-            <th><?php echo $fila['id_vehiculo']; ?></th>
-            <td><?php echo $fila['puertas']?></td>
-            <td><?php echo $fila['color']; ?></td>
-            <td><?php echo $fila['año']; ?></td>
-            <td><?php echo $fila['modelo']; ?></td>
-            <td><?php echo $fila['marca']; ?></td>
-            
+            <th><?php echo $fila['id']; ?></th>
+            <td><?php echo $fila['nombres']; ?></td>
+            <td><?php echo $fila['apellidos']; ?></td>
+            <td><?php echo $fila['usuario']; ?></td>
+            <td><?php echo $fila['password']; ?></td>
+            <td>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-danger me-md-2" id="btnEliminarUsuario"
+                                        onclick="eliminarUsuario(<?php echo $fila['id']; ?>);" name="btnEliminarUsuario"
+                                        type="button">Eliminar</button>
+                                </div>
+                            </td>
     
         </tr>
 
     <?php 
     }
 
-
-    
 ?>
-
 
 	</body>
   </table>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-<script src="../js/user.js"></script>
-<script src="../js/acciones.js"></script>
 <script src="../../assets/js/buscador.js"></script>
+<script src="../../assets/js/moduloUsuarios.js"></script>
+
 		<?php include('../index.php'); ?>
 </html>

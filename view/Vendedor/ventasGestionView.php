@@ -64,7 +64,7 @@ $result = $usrClass->getVenta();
                         <th>Id</th>
                         <th>Observaciones</th>
                         <th>estado</th>
-                        <th>cliente id</th>
+                        <th>Cliente</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -78,7 +78,7 @@ while ($fila = mysqli_fetch_array($result)){
             <th><?php echo $fila['id']; ?></th>
             <td><?php echo $fila['observaciones']; ?></td>
             <td><?php echo $fila['estado']; ?></td>
-            <td><?php echo $fila['cliente_id']; ?></td>
+            <td><?php echo $fila['nombre']; ?></td>
             <td>
 
             

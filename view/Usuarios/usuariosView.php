@@ -10,8 +10,9 @@ include_once("../../model/functions.php");
 
 $usrClass = new usuariosModel();
 $result = array();
-$resultRoles = array();
 $result = $usrClass->getUsuarios();
+
+
 ?>
 
 
@@ -79,7 +80,7 @@ while ($fila = mysqli_fetch_array($result)){
             <td><?php echo $fila['apellidos']; ?></td>
             <td><?php echo $fila['usuario']; ?></td>
             <td><?php echo $fila['password']; ?></td>
-            
+           
     
         </tr>
 

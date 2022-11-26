@@ -12,9 +12,9 @@ $respuesta = array();
 $eliminarCliente = (isset($_POST['eliminar_cliente'])) ? $_POST['eliminar_cliente'] : "0";
 
 if($obtenerCliente == 1){
-    $cliente_id = (isset($_POST['user_id'])) ? $_POST['user_id'] : "0";
+    $cliente_id = (isset($_POST['cliente_id'])) ? $_POST['cliente_id'] : "0";
         
-    $result = $usrClass->getClienteById($user_id);
+    $result = $usrClass->getClienteById($cliente_id);
 
     if ($fila = mysqli_fetch_array($result)){
         $respuesta['id'] = $fila['id'];
@@ -28,9 +28,9 @@ if($obtenerCliente == 1){
 
 
 if($eliminarCliente == 1){
-    $user_id = (isset($_POST['user_id'])) ? $_POST['user_id'] : "0";
+    $user_id = (isset($_POST['cliente_id'])) ? $_POST['cliente_id'] : "0";
 
-    $result = $usrClass->eliminarCliente($user_id);
+    $result = $usrClass->eliminarCliente($cliente_id);
 
     $respuesta['resultado'] = $result;
     echo json_encode($respuesta);

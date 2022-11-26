@@ -18,11 +18,24 @@ class usuariosModel {
         return $resultado;
     }
 
+    function getModelo(){
+        $conexionClass = new Tools();
+        $conexion = $conexionClass->conectar();
+
+        $sql = "SELECT nombre
+        FROM modelo";
+                ;
+ 
+        $resultado = mysqli_query($conexion, $sql);
+        $conexionClass->desconectar($conexion);
+        return $resultado;
+    }
+
     function getVenta(){
         $conexionClass = new Tools();
         $conexion = $conexionClass->conectar();
 
-        $sql = "SELECT * FROM venta_vehiculo";
+        $sql = "SELECT * FROM venta_vehiculo inner join cliente on venta_vehiculo.cliente_id = cliente_id";
                 ;
  
         $resultado = mysqli_query($conexion, $sql);
@@ -72,10 +85,7 @@ class usuariosModel {
         $conexionClass = new Tools();
         $conexion = $conexionClass->conectar();
 
-        $sql = "SELECT id, puertas, color, año, numero_vin, numero_chasis, numero_placas
-        FROM sistema.vehiculos;
-
-        ";
+        $sql = "Select * from vehiculos inner join marca inner join modelo on vehiculos.modelo_id = modelo.id and vehiculos.marca_id = marca.id";
         
  
         $resultado = mysqli_query($conexion, $sql);
@@ -251,10 +261,10 @@ class usuariosModel {
     }
 }
 
-function eliminarCliente($cliente_id){
+function eliminarCliente($id){
     $conexionClass = new Tools();
     $conexion = $conexionClass->conectar();
-    $sql = "DELETE FROM cliente WHERE id = $cliente_id";
+    $sql = "DELETE FROM cliente WHERE id = $id";
     
     $resultado = mysqli_query($conexion, $sql);
     if($resultado){
