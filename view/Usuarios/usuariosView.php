@@ -35,7 +35,7 @@ $result = $usrClass->getUsuarios();
       <div class="container-fluid">
     <form>
       <input class="form-control me-2 light-table-filter" style="width: 500px; text-align:center;" data-table="table_id" type="text" 
-      placeholder="Buscar Clientes">
+      placeholder="Buscar Usuarios">
       <hr>
       </form>
       </section>
@@ -79,12 +79,7 @@ while ($fila = mysqli_fetch_array($result)){
             <td><?php echo $fila['apellidos']; ?></td>
             <td><?php echo $fila['usuario']; ?></td>
             <td><?php echo $fila['password']; ?></td>
-            <td>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="cancel" id="btnEliminarCliente"
-                        name="btnEliminarCliente" type="button" onclick="eliminarUsuario(<?php echo $fila['id']; ?>); ">Eliminar</button>
-                </div>
-            </td>
+            
     
         </tr>
 

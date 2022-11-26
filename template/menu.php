@@ -62,14 +62,7 @@
                     </ul>
                     <li class="nav-item dropdown">
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu_opcion" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Informes
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item " href="view/Propietario/informes.php">Registros</a></li> 
-                        
-                    </ul>
+                    
                     <li class="nav-item dropdown">
                     
                     

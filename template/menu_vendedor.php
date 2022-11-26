@@ -45,7 +45,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item " href="view/Vendedor/addclientesView.php">Agregar Clientes</a></li>                                                
-                        <li><a class="dropdown-item " href="view/Vendedor/modclientesView.php">Modificar Clientes</a></li>                                                
+                                                                       
                     
                     
                     
