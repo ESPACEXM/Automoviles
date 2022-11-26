@@ -34,7 +34,7 @@ $result = $usrClass->getUsuarios();
                 <input name="puertas" type="text" id="puertas" required="">
 
                 <label for="text">Color</label>
-                <input name="colo" type="text" id="color">
+                <input name="color" type="text" id="color">
 
                 <label for="text">Año</label>
                 <input name="año" type="text" id="año">
